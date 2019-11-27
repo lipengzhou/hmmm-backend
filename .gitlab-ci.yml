@@ -1,0 +1,57 @@
+stages:
+  - deploy
+
+# http://www.course.itcast.cn:7001
+# deploy:
+#   stage: deploy
+#   script:
+#     - cnpm i
+#     - cp -rf ./dist/. /home/shizhan/docker-data/hmmm-nodejs-new
+    
+#     - cd /home/shizhan/docker-data/hmmm-nodejs
+#     - rm -rf /home/shizhan/docker-data/hmmm-nodejs
+#     - cp -rf ./dist/. /home/shizhan/docker-data/nginx/html/hmmm-admin
+#   tags:
+#     - shell-73
+#   only:
+#     - product
+
+
+    # docker build -t itcast/hmmm_nodejs .
+    # docker run -d --net=host --name hmmm-nodejs-server itcast/hmmm_nodejs
+
+
+
+# CI 变量
+# $CI_DOCKER_REGISTRY_SERVER          镜像服务器
+# $CI_DOCKER_REGISTRY_SERVER_USER     账号
+# $CI_DOCKER_REGISTRY_SERVER_PASS     密码
+# $CI_DOCKER_REGISTRY_SERVER_PROJECT  项目
+
+# build_image:
+#   stage: build
+#   script:
+#     - cnpm i
+#     - npm run build
+#     - rm -rf /home/shizhan/docker-data/nginx/html/hmmm-admin
+#     - cp -rf ./dist/. /home/shizhan/docker-data/nginx/html/hmmm-admin
+#     - docker build -t itcast/hmmm_vue_admin:$CI_PIPELINE_ID .
+#   tags:
+#     - shell-73
+#   only:
+#     - product
+
+# deploy_image:
+#   stage: deploy
+#   script:
+#     - sed -i 's/$DOCKER_REGISTRY_SERVER_PROJECT/'$(echo $CI_DOCKER_REGISTRY_SERVER_PROJECT)'/g' ./k8s/4-deployment.yaml
+#     - sed -i 's/$DOCKER_REGISTRY_SERVER/'$(echo $CI_DOCKER_REGISTRY_SERVER)'/g' ./k8s/4-deployment.yaml
+#     - sed -i 's/$CI_PROJECT_NAME/'$(echo $CI_PROJECT_NAME)'/g' ./k8s/4-deployment.yaml
+#     - sed -i 's/$CI_PIPELINE_ID/'$(echo $CI_PIPELINE_ID)'/g' ./k8s/4-deployment.yaml
+#     - cat ./k8s/4-deployment.yaml
+#     - kubectl apply -f ./k8s/1-namespace.yaml
+#     - kubectl apply -f ./k8s/4-deployment.yaml
+#     - kubectl apply -f ./k8s/5-service.yaml
+#     - kubectl apply -f ./k8s/6-ingress.yaml
+#   tags:
+#     - centos-60 # 172.17.0.60 负责 CD k8s 容器部署
