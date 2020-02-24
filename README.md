@@ -1,5 +1,28 @@
 # node api server
 
+## 项目运行
+
+```shell
+# 下载仓库源码
+git clone https://github.com/lipengzhou/hmmm-backend.git
+
+#----------------------------------------------
+# 使用数据库管理软件创建一个名为 hmmm 的数据库
+# 在 hmmm 数据库中执行项目中 hmmm/db/mianmian.sql 文件
+# 在 hmmm/config/config.default.js 文件中配置 mysql 数据库连接信息
+# 执行完成继续下面的操作
+#----------------------------------------------
+
+# 进入项目目录
+cd hmmm-backend
+
+# 安装依赖
+npm install
+
+# 启动开发服务
+npm run dev
+```
+
 ## 调试
 
 调试配置 `launch.json`
