@@ -1,4 +1,6 @@
-# node api server
+# 黑马面面后端服务接口
+
+> 黑马面面前端项目地址：https://github.com/lipengzhou/hmmm-frontend
 
 ## 项目运行
 
