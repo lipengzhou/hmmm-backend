@@ -10,7 +10,7 @@
     "egg-mysql": "^3.0.0",
     "egg-scripts": "^2.5.0",
     "egg-validate": "^1.0.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "sha.js": "^2.4.11"
   },
   "devDependencies": {
